@@ -34,23 +34,42 @@ public class Main_class {
 		
 		
 		ResourceLock lock = new ResourceLock();
+<<<<<<< HEAD
 		
+=======
+		lock.flag=1;
+		lock.flag1=0;
+		LocalDate localDate= LocalDate.of(2010,Month.JANUARY,14);
+		LocalTime localTime= LocalTime.now();
+>>>>>>> 94b3e95e78be5e29ec44b54d530724a6d3fda07f
 		
 		int n=-1;
 		do
 		{
 		synchronized (lock) {
+<<<<<<< HEAD
 			while(lock.flag!=0 || lock.flag1!=0)
+=======
+			while(lock.flag!=1 || lock.flag1!=0)
+>>>>>>> 94b3e95e78be5e29ec44b54d530724a6d3fda07f
 				{lock.wait();}
 			System.out.println("Enter blah blah blah");
 
 			n=Scan.scanner.nextInt();
+<<<<<<< HEAD
 		lock.flag=n;
+=======
+		lock.flag=0;
+>>>>>>> 94b3e95e78be5e29ec44b54d530724a6d3fda07f
 		lock.flag1=n;
 		lock.notifyAll();
 		}
 		 
 			
+<<<<<<< HEAD
+=======
+		ClassForSerialisation temp2=new ClassForSerialisation();
+>>>>>>> 94b3e95e78be5e29ec44b54d530724a6d3fda07f
 		switch (n) {
 		case 1:
 				{

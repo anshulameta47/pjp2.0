@@ -25,7 +25,11 @@ public class Case10 extends Thread implements basicvariables {
 	
 		synchronized(lock)
 		{
+<<<<<<< HEAD
 			while(lock.flag!=10)
+=======
+			while(lock.flag!=0)
+>>>>>>> 94b3e95e78be5e29ec44b54d530724a6d3fda07f
 			{	try 
 					{
 						lock.wait();
@@ -38,7 +42,11 @@ public class Case10 extends Thread implements basicvariables {
 			System.out.println("Enter string to parse");
 			Scan.scanner.nextLine();
 			 s=Scan.scanner.nextLine();
+<<<<<<< HEAD
 			lock.flag=0;
+=======
+			lock.flag=1;
+>>>>>>> 94b3e95e78be5e29ec44b54d530724a6d3fda07f
 			lock.notifyAll();
 		
 		}
