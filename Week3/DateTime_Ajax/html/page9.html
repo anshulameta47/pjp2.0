@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Get week number of year</title>
+	<link rel="stylesheet" type="text/css" href="../css/Myfile.css" media="screen">
+
+</head>
+<body>
+
+<header>
+	<p>Get Week number of year by Date</p>
+</header>
+
+
+<section class="form"> 	
+
+<form >
+<h1>Enter date to get Week No. of the year in format yyyy-MM-dd:</h1>
+<input type="text" name="st" id="st"><br/><br/>
+<input type="button" value="Submit Query" onclick="Fun1(this.form)" title="Get Resultant date" class="button">
+</form>
+<h1>Result:</h1>
+<h2><input type="text" id="output" name="output"></h2>
+
+</section>
+
+
+<script type="text/javascript">
+	
+
+	function Fun1(form)
+	{
+		var st=document.getElementById('st').value;
+		var parts1 = st.split("-");
+  
+  		var date1= new Date(parts1[0], parts1[1] - 1, parts1[2]);
+  		var start = new Date(date1.getFullYear(), 0, 0);
+		var diff = date1 - start;
+		var oneDay = 1000 * 60 * 60 * 24;
+		var output = Math.floor(diff / oneDay);
+		document.getElementById('output').value=(Math.floor(output/7)+1);
+	}
+
+</script>
+</body>
+</html>

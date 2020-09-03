@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Get day of the date</title>
+	<link rel="stylesheet" type="text/css" href="../css/Myfile.css" media="screen">
+
+</head>
+<body>
+
+<header>
+	<p>Get day of the date</p>
+</header>
+
+
+<section class="form"> 	
+
+<form >
+<h1>Enter Date to get day in format yyyy-MM-dd:</h1>
+<input type="text" name="st" id="st"><br/><br/>
+<input type="button" title="Get resultant date" class="button" value="submit Query" onclick="Fun1(this.form)" >
+</form>
+
+<h1>Result:</h1>
+<h2><input type="text" id="output" name="output"></h2>
+
+</section>
+
+
+<script type="text/javascript">
+	
+function Fun1(form)
+{
+	var st=document.getElementById('st').value;
+	var parts1 = st.split("-");
+  	let output;
+  	var date1= new Date(parts1[0], parts1[1] - 1, parts1[2]);
+  	
+  		if(date1.getDay()==1)
+  			output="Monday";
+  		else if(date1.getDay()==2)
+  			output="Tuesday";
+  		else if(date1.getDay()==3)
+  			output="Wednesday";
+  		else if(date1.getDay()==4)
+  			output="Thursday";
+  		else if(date1.getDay()==5)
+  			output="Friday";
+  		else if(date1.getDay()==6)
+  			output="Saturday";
+  		else
+  			output="Sunday";
+
+  	document.getElementById('output').value=output;
+
+}	
+</script>
+</body>
+</html>

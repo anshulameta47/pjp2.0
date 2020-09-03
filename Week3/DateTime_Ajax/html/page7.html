@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add two dates</title>
+	<link rel="stylesheet" type="text/css" href="../css/Myfile.css" media="screen">
+
+</head>
+<body>
+
+<header>
+	<p>Addition of two dates </p>
+</header>
+
+
+<section class="form"> 	
+<form >
+
+<h1>Enter First date in format dd-MM-yyyy:</h1>
+<input type="text" name="s1" id="s1"><br/>
+
+<h1>Enter First date in format dd-MM-yyyy:</h1>
+<input type="text" name="s2" id="s2"><br/><br/>
+
+<input type="button" title="Get resultant date" class="button" value="submit Query" onclick="Fun1(this.form)" >
+</form>
+<h1>Result:</h1>
+<h2><input type="text" id="output" name="output"></h2>
+</section>
+
+
+
+<script type="text/javascript">
+function Fun1(form)
+{
+	//DateFormat formatter;
+	let s1=document.getElementById('s1').value;
+	var s2=document.getElementById('s2').value;
+	var parts1 = s1.split("-");
+  	var parts2 = s1.split("-");
+  	
+  	var date1= new Date(parts1[2], parts1[1]-1 , parts1[0]);
+  	var date2= new Date(parts2[2], parts2[1] - 1, parts2[0]);
+  	
+	//DateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+	//Date date1 = (Date) formatter.parse(s1);
+	//Date date2= (Date)formatter.parse(s2);
+
+
+	var output=new Date(date1.getTime()+date2.getTime());
+	document.getElementById("output").value=output;
+}	
+</script>
+</body>
+</html>

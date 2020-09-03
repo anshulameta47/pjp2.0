@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NLP</title>
+	<link rel="stylesheet" type="text/css" href="../css/Myfile.css" media="screen">
+
+</head>
+<body>
+
+<header>
+	<p>Parse Natural Language</p>
+</header>
+
+<aside>
+<section class="My_operations"></section>	
+
+<ul>
+<li>Today</li>
+<li>Tomorrow</li>
+<li>Day-after-tomorrow</li>
+<li>Yesterday</li>
+<li>Day-before-yesterday</li>
+<li>Last-week</li>
+<li>Next-week</li>
+<li>Last-month</li>
+<li>Next-month</li>
+
+<li>Last-year</li>
+<li>Next-year</li>
+<li>Days/Months/Years/weeks earlier</li>
+<li>Days/Months/Years/Weeks from now</li>
+</ul>
+</aside>
+
+
+
+<aside>
+<section class="form"> 	
+<form action="/NLP" method="get">
+<h1>Enter a string to parse from following:</h1>
+<input type="text" name="st" id="st"><br/><br/>
+<h1>Enter no. of days (if required)</h1><br/>
+<input type="text" name="d" id="d"><br/><br/>
+<input type="button" value="Submit Query" onclick="Fun1(this.form)" title="Get Resultant date" class="button">
+</form>
+<h1>Result:</h1>
+<h2><input type="text" id="output" name="output"></h2>
+</section>
+</aside>
+
+
+<script type="text/javascript">
+	
+function Fun1(form)
+{
+	var s=document.getElementById('st').value;
+	let output;
+	var date=new Date();
+	output=date;
+	var d=document.getElementById("d").value;
+	if(s==="Today")
+		output=date;
+
+	else if (s==="Tomorrow")
+	{
+		output.setDate(date.getDate()+1);	
+	}
+	else if(s==="Day-after-tomorrow")
+	{
+		output.setDate(date.getDate()+2);
+	}
+	else if(s==="Yesterday")
+	{
+		output.setDate(date.getDate()-1);
+	}
+	else if(s==="Day-before-yesterday")
+	{
+		output.setDate(date.getDate()-2);
+	}
+	else if(s==="Last-week")
+	{
+		output.setDate(date.getDate()-7);
+	}
+	else if(s==="Next-week")
+	{
+		output.setDate(date.getDate()+7);
+	}
+	else if(s==="Next-month")
+	{
+		output.setDate(date.getDate()+30);
+	}
+	else if(s==="Last-month")
+	{
+		output.setDate(date.getDate()-Math.floor(30.5*1));
+	}
+	else if(s==="Last-year")
+	{
+		output.setDate(date.getDate()-365);
+	}
+	else if(s==="Next-year")
+	{
+		output.setDate(date.getDate()+365);
+	}
+	else if(s.endsWith("Days earlier"))
+	{
+		output.setDate(date.getDate()-d);
+	}
+	else if(s.endsWith("Months earlier"))
+	{
+		output.setDate(date.getDate()-Math.floor(30.5*d));
+	}
+	else if(s.endsWith("Years earlier"))
+	{
+		output.setDate(date.getDate()-365*d);
+	}
+	else if(s.endsWith('Weeks earlier'))
+	{
+		output.setDate(date.getDate()-7*d);
+	}
+	else if(s.endsWith("Days from now"))
+	{
+		output.setDate(date.getDate()+1*d);
+	}
+	else if(s.endsWith("Months from now"))
+	{
+		output.setDate(date.getDate()+Math.floor(30.5*d));
+	}
+	else if(s.endsWith("Years from now"))
+	{
+		output.setDate(date.getDate()+d*365);
+	}
+	else if(s.endsWith("Weeks from now"))
+	{
+		output.setDate(date.getDate()+d*7);
+	}
+
+	else
+		output="p";
+
+	document.getElementById("output").value=output;
+}	
+
+</script>
+
+
+</body>
+</html>

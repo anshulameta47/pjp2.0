@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Date Time Calculator</title>
+	<link rel="stylesheet" type="text/css" href="../css/Myfile.css" media="screen">
+</head>
+<body>
+
+<header>
+	<p>Welcome to Date Time Calculator</p> 
+</header>
+
+<aside>
+<section id="My_operations">
+
+<ul>
+<li>1: To get Today's Date</li>
+<li>2: To get Current Time</li>
+<li>3: To add n days in Today's date</li>
+<li>4: To add n months in Today's date</li>
+<li>5: To add n years in Today's date</li>
+<li>6: To add n weeks in Today's date</li>
+<li>7: To add two dates</li>
+<li>8: To get day of the date</li>
+<li>9: To get week number in year of date</li>
+<li>10: For Natural language processing</li>
+<li>11: To Read history from History.txt</li>
+</ul>
+</section>
+</aside>
+<aside>
+<section class="form">
+<h1>Enter:</h1>
+<form  name="Call">
+<input type="text" name="n" id="n"><br/><br/>
+<input type="button" value="submit Query" id="submit" title="submit" class="button" onclick="fun(this.form)">
+</form>
+<h1>Result</h1>
+<h2><input type="text" id="result" name="result">
+
+</aside>	
+</section>
+
+
+<script type="text/javascript">
+	
+function fun(form)
+{
+	var operation=document.getElementById('n').value;
+
+	//let d=document.getElementById('d').value;
+	//var d=document.getElementById('d').value;
+	if(operation==1)
+		result=ShowDate();
+	else if(operation==2)
+		result=ShowTime();
+
+	else if(operation==3)
+		{result=location.replace("page3.html");}
+
+	else if(operation==4)
+		{result=location.replace("page4.html");}
+	else if(operation==5)
+		{result=location.replace("page5.html");}
+	else if(operation==6)
+		{result=location.replace("page6.html");}
+	else if(operation==7)
+		{result=location.replace("page7.html");}
+	else if(operation==8)
+		{result=location.replace("page8.html");}
+	else if(operation==9)
+		{result=location.replace("page9.html");}
+	else if(operation==10)
+		{result=location.replace("page10.html");}
+
+
+	else
+		result=0;
+	document.getElementById("result").value=result;
+}
+
+function ShowDate()
+{
+	return new Date().toJSON().slice(0,10).replace(/-/g,'/');
+	
+}
+
+function ShowTime()
+{
+	return new Date().toJSON().slice(11,20).replace(/-/g,'/');
+	
+}
+
+
+
+
+
+</script>
+
+</body>
+</html>

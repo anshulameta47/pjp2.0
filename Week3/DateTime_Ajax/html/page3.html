@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add days to Today's date</title>
+	<link rel="stylesheet" type="text/css" href="../css/Myfile.css" media="screen">
+
+</head>
+<body>
+
+<header>
+	<p> Addition of days to Today's Date</p>
+</header>
+
+<section class="form"> 	
+
+<form  method="post">
+<h1>Enter No. of days to add in today's date:</h1>
+<input type="text" name="n" id="n"><br/><br/>
+<input type="button" title="Get resultant date" class="button" value="submit Query" onclick="Fun1(this.form)" >
+</form>
+<h1>Result:</h1>
+<h2><input type="text" id="output" name="output"></h2>
+
+</section>
+
+
+<script type="text/javascript">
+	
+function Fun1(form)
+{
+	var n=document.getElementById('n').value;
+	var output=new Date();
+	output.setDate(output.getDate()+n*1);
+	document.getElementById("output").value=output;
+}
+function ShowDate()
+{
+	return new Date().toJSON().slice(0,10).replace(/-/g,'/');
+	
+}
+
+</script>
+
+
+</body>
+</html>
